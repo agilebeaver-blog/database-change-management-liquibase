@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-003
+      author: agilebeaver
+      changes:
+        - createTable:
+            tableName: role
+            remarks: 'Usermanagement: This table takes the Role information'
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  remarks: 'Internal ID and primary key'
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: role_um_rl_id_pk
+              - column:
+                  name: uuid
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  remarks: 'UUID, unique key to be exposed'
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: role_uuid_unq
+              - column:
+                  name: name
+                  type: VARCHAR(12)
+                  remarks: "Role's name"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Creation timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(30)
+                  remarks: 'Creator of this entity'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Last modification timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_by
+                  type: VARCHAR(30)
+                  remarks: 'Last one changed this entity'
+                  constraints:
+                    nullable: false
+        - addAutoIncrement:
+            tableName: role
+            columnName: id
+            columnDataType: BIGINT
+            startWith: 1
+            incrementBy: 1

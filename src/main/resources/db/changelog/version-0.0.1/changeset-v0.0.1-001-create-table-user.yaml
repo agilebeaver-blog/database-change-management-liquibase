@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-001
+      author: agilebeaver
+      changes:
+        - createTable:
+            tableName: user
+            remarks: 'Usermanagement: This table takes the User information like login, password and username'
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  remarks: 'Internal ID and primary key'
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: user_id_pk
+              - column:
+                  name: uuid
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  remarks: 'UUID, unique key to be exposed'
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: user_uuid_unq
+              - column:
+                  name: login
+                  type: VARCHAR(30)
+                  remarks: "User's login name"
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: user_login_unq
+              - column:
+                  name: password
+                  type: VARCHAR(250)
+                  remarks: "User's password, encrypted"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(250)
+                  remarks: "User's email address"
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: user_email_unq
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Creation timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(30)
+                  remarks: 'Creator of this entity'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Last modification timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_by
+                  type: VARCHAR(30)
+                  remarks: 'Last one changed this entity'
+                  constraints:
+                    nullable: false
+        - addAutoIncrement:
+            tableName: user
+            columnName: id
+            columnDataType: BIGINT
+            startWith: 1
+            incrementBy: 1

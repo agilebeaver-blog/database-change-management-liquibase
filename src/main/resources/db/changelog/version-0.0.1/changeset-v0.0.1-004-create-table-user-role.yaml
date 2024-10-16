@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-004
+      author: agilebeaver
+      changes:
+        - createTable:
+            tableName: user_role
+            remarks: 'Usermanagement: mapping um_users to um_roles'
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  remarks: 'Internal ID and primary key'
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: user_role_id_pk
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  remarks: 'Reference to user.id'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  remarks: 'Reference to role.id'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Creation timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(30)
+                  remarks: 'Creator of this entity'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  remarks: 'Last modification timestamp'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_by
+                  type: VARCHAR(30)
+                  remarks: 'Last one changed this entity'
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            tableName: user_role
+            columnNames: user_id, role_id
+            constraintName: user_role_user_id_role_id_uniq
+        - addForeignKeyConstraint:
+            baseTableName: user_role
+            baseColumnNames: user_id
+            referencedTableName: user
+            referencedColumnNames: id
+            constraintName: user_role_user_id_fk
+        - addForeignKeyConstraint:
+            baseTableName: user_role
+            baseColumnNames: role_id
+            referencedTableName: role
+            referencedColumnNames: id
+            constraintName: user_role_role_id_fk
+        - addAutoIncrement:
+            tableName: user_role
+            columnName: id
+            columnDataType: BIGINT
+            startWith: 1
+            incrementBy: 1

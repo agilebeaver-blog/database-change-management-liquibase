@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-005
+      author: agilebeaver
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: name
+                  value: admin
+              - column:
+                  name: created_by
+                  value: admin
+              - column:
+                  name: modified_by
+                  value: admin
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: name
+                  value: standard
+              - column:
+                  name: created_by
+                  value: admin
+              - column:
+                  name: modified_by
+                  value: admin
