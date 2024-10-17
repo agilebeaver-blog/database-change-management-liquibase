@@ -30,7 +30,7 @@ You will see something like
 
     [{"uuid":"d6025806-ffd2-48cc-8ed0-4bfc8e156554","login":"admin","email":"thebeaveradmin@agilebeaver.com","roles":["admin"]},{"uuid":"1baf8299-ca73-403c-af0e-257cd00d0ff0","login":"agilebeaver","email":"agilebeaver@agilebeaver.com","roles":["standard"]}]
 
-This is not nicely formatted, but you can see the tow users inserted into the database on startup.
+This is not nicely formatted, but you can see the two users inserted into the database on startup.
 
 > Make sure to have the last _slash_ present, otherwise you will receive a HTTP 404 error (with Spring Boot 3 you have to be precise with your definition and the urls you use).
 
