@@ -24,7 +24,7 @@ spring:
   liquibase:
     change-log: 'classpath:db/changelog/db-changelog-master.yaml'
     # default-schema: 'agilebeaver'
-  jpa:
-    properties:
-      hibernate:
-        default_schema: 'agilebeaver'
+  # jpa:
+  #   properties:
+  #     hibernate:
+  #       default_schema: 'agilebeaver'

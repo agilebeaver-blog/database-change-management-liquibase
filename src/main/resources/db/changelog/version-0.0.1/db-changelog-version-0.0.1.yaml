@@ -6,14 +6,23 @@ databaseChangeLog:
       file: changeset-v0.0.1-002-insert-user-admin.yaml
       relativeToChangelogFile: true
   - include:
-      file: changeset-v0.0.1-003-create-table-role.yaml
+      file: changeset-v0.0.1-003-update-admin.yaml
       relativeToChangelogFile: true
   - include:
-      file: changeset-v0.0.1-004-create-table-user-role.yaml
+      file: changeset-v0.0.1-004-create-table-role.yaml
       relativeToChangelogFile: true
   - include:
-      file: changeset-v0.0.1-005-insert-roles.yaml
+      file: changeset-v0.0.1-005-create-table-user-role.yaml
       relativeToChangelogFile: true
   - include:
-      file: changeset-v0.0.1-006-assign-admin-role.yaml
+      file: changeset-v0.0.1-006-insert-roles.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: changeset-v0.0.1-007-assign-admin-role.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: changeset-v0.0.1-008-insert-user-agilebeaver.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: changeset-v0.0.1-009-assign-standard-role.yaml
       relativeToChangelogFile: true

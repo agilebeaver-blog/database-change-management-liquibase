@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 import java.util.UUID
 
 @Entity
-@Table(name = "role")
+@Table(name = "um_role")
 data class Role(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 0.0.1-005
+      id: 0.0.1-006
       author: agilebeaver
       changes:
         - insert:
-            tableName: role
+            tableName: um_role
             columns:
               - column:
                   name: name
@@ -16,7 +16,7 @@ databaseChangeLog:
                   name: modified_by
                   value: admin
         - insert:
-            tableName: role
+            tableName: um_role
             columns:
               - column:
                   name: name

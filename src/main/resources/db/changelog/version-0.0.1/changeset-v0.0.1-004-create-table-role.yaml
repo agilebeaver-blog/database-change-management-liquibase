@@ -4,8 +4,8 @@ databaseChangeLog:
       author: agilebeaver
       changes:
         - createTable:
-            tableName: user_role
-            remarks: 'Usermanagement: mapping um_users to um_roles'
+            tableName: um_role
+            remarks: 'Usermanagement: This table takes the Role information'
             columns:
               - column:
                   name: id
@@ -14,17 +14,20 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: user_role_id_pk
+                    primaryKeyName: role_um_rl_id_pk
               - column:
-                  name: user_id
-                  type: BIGINT
-                  remarks: 'Reference to user.id'
+                  name: uuid
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  remarks: 'UUID, unique key to be exposed'
                   constraints:
                     nullable: false
+                    unique: true
+                    uniqueConstraintName: role_uuid_unq
               - column:
-                  name: role_id
-                  type: BIGINT
-                  remarks: 'Reference to role.id'
+                  name: name
+                  type: VARCHAR(12)
+                  remarks: "Role's name"
                   constraints:
                     nullable: false
               - column:
@@ -53,24 +56,8 @@ databaseChangeLog:
                   remarks: 'Last one changed this entity'
                   constraints:
                     nullable: false
-        - addUniqueConstraint:
-            tableName: user_role
-            columnNames: user_id, role_id
-            constraintName: user_role_user_id_role_id_uniq
-        - addForeignKeyConstraint:
-            baseTableName: user_role
-            baseColumnNames: user_id
-            referencedTableName: user
-            referencedColumnNames: id
-            constraintName: user_role_user_id_fk
-        - addForeignKeyConstraint:
-            baseTableName: user_role
-            baseColumnNames: role_id
-            referencedTableName: role
-            referencedColumnNames: id
-            constraintName: user_role_role_id_fk
         - addAutoIncrement:
-            tableName: user_role
+            tableName: um_role
             columnName: id
             columnDataType: BIGINT
             startWith: 1

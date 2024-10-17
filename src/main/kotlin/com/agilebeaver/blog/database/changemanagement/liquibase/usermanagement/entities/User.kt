@@ -14,7 +14,7 @@ import java.time.LocalDateTime
 import java.util.UUID
 
 @Entity
-@Table(name = "user")
+@Table(name = "um_user")
 data class User(
     @Id
     @JsonIgnore
@@ -36,7 +36,7 @@ data class User(
 
     @ManyToMany
     @JoinTable(
-        name = "user_role",
+        name = "um_user_role",
         joinColumns = [JoinColumn(name = "user_id")],
         inverseJoinColumns = [JoinColumn(name = "role_id")]
     )

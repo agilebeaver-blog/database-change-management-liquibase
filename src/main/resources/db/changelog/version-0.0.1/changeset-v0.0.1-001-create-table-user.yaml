@@ -4,7 +4,7 @@ databaseChangeLog:
       author: agilebeaver
       changes:
         - createTable:
-            tableName: user
+            tableName: um_user
             remarks: 'Usermanagement: This table takes the User information like login, password and username'
             columns:
               - column:
@@ -73,7 +73,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
         - addAutoIncrement:
-            tableName: user
+            tableName: um_user
             columnName: id
             columnDataType: BIGINT
             startWith: 1

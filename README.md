@@ -20,6 +20,30 @@ To run the example application you have to access a running PostgreSQL database,
 
     ./gradlew bootRun --args='--spring.profiles.active=local'
 
+## Accessing the REST controller
+
+If you have ``curl`` installed on your machine you can access the REST controller by simly using the following expression:
+
+    curl http://localhost:8088/agilebeaver/api/users/
+
+You will see something like
+
+    [{"uuid":"d6025806-ffd2-48cc-8ed0-4bfc8e156554","login":"admin","email":"thebeaveradmin@agilebeaver.com","roles":["admin"]},{"uuid":"1baf8299-ca73-403c-af0e-257cd00d0ff0","login":"agilebeaver","email":"agilebeaver@agilebeaver.com","roles":["standard"]}]
+
+This is not nicely formatted, but you can see the tow users inserted into the database on startup.
+
+> Make sure to have the last _slash_ present, otherwise you will receive a HTTP 4ß4 error (with Spring Boot 3 you have to be precise with your definition and the urls you use).
+
+Now you can get any of the users by appending the UUID to the url, for example
+
+    curl http://localhost:8088/agilebeaver/api/users/1baf8299-ca73-403c-af0e-257cd00d0ff0
+
+will return
+
+    {"uuid":"1baf8299-ca73-403c-af0e-257cd00d0ff0","login":"agilebeaver","email":"agilebeaver@agilebeaver.com","roles":["standard"]}
+
+See the difference with the results: the first request returns a list of users in the form of \[user1, user2\], the latter returns a single user entity.
+
 ## Starting, stopping and removing a local database with docker
 
 We have prepared a simple PostgreSQL database to be used with this application.
@@ -72,3 +96,5 @@ Then you can remove the container:
     docker container rm nifty_curran
 
 And to completely get rid of the data you have to remove the volume.
+
+    docker volume rm 3aa7c65b7fabce9f8c5d14d1e3bbbe357c389baea8c0c3b5f23474c55fdb9911

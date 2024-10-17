@@ -22,7 +22,7 @@ class UserController(private val userRepository: UserRepository) {
 
     @GetMapping("/{uuid}")
     fun getUserByUuid(@PathVariable uuid: UUID): ResponseEntity<UserModel> {
-        val user = userRepository.findById(uuid)
+        val user = userRepository.findByUuid(uuid)
         return if (user.isPresent) {
             ResponseEntity.ok(mapUserToUserModel(user.get()))
         } else {
