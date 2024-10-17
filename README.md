@@ -44,6 +44,32 @@ will return
 
 See the difference with the results: the first request returns a list of users in the form of \[user1, user2\], the latter returns a single user entity.
 
+> If you want to have the result in a more readable output, try ``jq``. This is the result if you use pretty printing with _jq_:
+    
+    curl http://localhost:8088/agilebeaver/api/users/ | jq '.'
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    Dload  Upload   Total   Spent    Left  Speed
+    100   253    0   253    0     0   1144      0 --:--:-- --:--:-- --:--:--  1144
+    [
+        {
+            "uuid": "d6025806-ffd2-48cc-8ed0-4bfc8e156554",
+            "login": "admin",
+            "email": "thebeaveradmin@agilebeaver.com",
+            "roles": [
+                "admin"
+            ]
+        },
+        {
+            "uuid": "1baf8299-ca73-403c-af0e-257cd00d0ff0",
+            "login": "agilebeaver",
+            "email": "agilebeaver@agilebeaver.com",
+            "roles": [
+                "standard"
+            ]
+        }
+    ]
+
+
 ## Starting, stopping and removing a local database with docker
 
 We have prepared a simple PostgreSQL database to be used with this application.
