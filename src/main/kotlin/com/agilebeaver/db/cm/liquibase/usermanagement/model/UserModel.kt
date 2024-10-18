@@ -1,4 +1,4 @@
-package com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.model
+package com.agilebeaver.db.cm.liquibase.usermanagement.model
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 

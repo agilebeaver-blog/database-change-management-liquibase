@@ -1,4 +1,4 @@
-package com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.entities
+package com.agilebeaver.db.cm.liquibase.usermanagement.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.Column

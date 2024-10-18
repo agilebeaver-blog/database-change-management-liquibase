@@ -1,8 +1,8 @@
-package com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.controllers
+package com.agilebeaver.db.cm.liquibase.usermanagement.controllers
 
-import com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.entities.User
-import com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.model.UserModel
-import com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.repositories.UserRepository
+import com.agilebeaver.db.cm.liquibase.usermanagement.entities.User
+import com.agilebeaver.db.cm.liquibase.usermanagement.model.UserModel
+import com.agilebeaver.db.cm.liquibase.usermanagement.repositories.UserRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

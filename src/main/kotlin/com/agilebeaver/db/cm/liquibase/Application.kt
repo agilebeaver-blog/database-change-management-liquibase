@@ -1,4 +1,4 @@
-package com.agilebeaver.blog.database.changemanagement.liquibase
+package com.agilebeaver.db.cm.liquibase
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

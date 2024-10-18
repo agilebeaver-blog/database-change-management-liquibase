@@ -1,6 +1,6 @@
-package com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.repositories
+package com.agilebeaver.db.cm.liquibase.usermanagement.repositories
 
-import com.agilebeaver.blog.database.changemanagement.liquibase.usermanagement.entities.User
+import com.agilebeaver.db.cm.liquibase.usermanagement.entities.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 import java.util.UUID
