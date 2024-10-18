@@ -6,7 +6,7 @@ In this example we will see how we can change our database schema alongside with
 
 ## Building the example
 
-This is a small Kotlin application built with spring boot and JDK 21. The latter is the only thing you have to install to run the application.
+This is a small Kotlin application built with Spring Boot 3 and JDK 21. The latter is the only thing you have to install to run the application.
 
 The build system uses gradle, if you use the gradle wrapper the required version of gradle will be downloaded and installed in the project directory prior to building the application for the first time.
 
@@ -22,7 +22,7 @@ To run the example application you have to access a running PostgreSQL database,
 
 ## Accessing the REST controller
 
-If you have ``curl`` installed on your machine you can access the REST controller by simly using the following expression:
+If you have ``curl`` installed on your machine you can access the REST controller by simply using the following expression:
 
     curl http://localhost:8088/agilebeaver/api/users/
 
@@ -30,9 +30,9 @@ You will see something like
 
     [{"uuid":"d6025806-ffd2-48cc-8ed0-4bfc8e156554","login":"admin","email":"thebeaveradmin@agilebeaver.com","roles":["admin"]},{"uuid":"1baf8299-ca73-403c-af0e-257cd00d0ff0","login":"agilebeaver","email":"agilebeaver@agilebeaver.com","roles":["standard"]}]
 
-This is not nicely formatted, but you can see the tow users inserted into the database on startup.
+This is not nicely formatted, but you can see the two users inserted into the database on startup.
 
-> Make sure to have the last _slash_ present, otherwise you will receive a HTTP 4ß4 error (with Spring Boot 3 you have to be precise with your definition and the urls you use).
+> Make sure to have the last _slash_ present, otherwise you will receive a HTTP 404 error (with Spring Boot 3 you have to be precise with your definition and the urls you use).
 
 Now you can get any of the users by appending the UUID to the url, for example
 
