@@ -38,6 +38,8 @@ databaseChangeLog:
                   remarks: "User's password, encrypted"
                   constraints:
                     nullable: false
+                    unique: true
+                    uniqueConstraintName: user_email_unq
               - column:
                   name: email
                   type: VARCHAR(250)

@@ -42,15 +42,16 @@ data class User(
     )
     val roles: Set<Role> = HashSet(),
 
-    @Column(name = "created_at", nullable = false)
-    var createdAt: LocalDateTime = LocalDateTime.now(),
-
     @Column(name = "created_by")
     var createdBy: String,
+
+    @Column(name = "modified_by", nullable = false)
+    var modifiedBy: String,
+
+    @Column(name = "created_at", nullable = false)
+    var createdAt: LocalDateTime = LocalDateTime.now(),
 
     @Column(name = "modified_at", nullable = false)
     var modifiedAt: LocalDateTime = LocalDateTime.now(),
 
-    @Column(name = "modified_by", nullable = false)
-    var modifiedBy: String,
 )

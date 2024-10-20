@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 0.0.1-008
       author: agilebeaver
+      context: local
       changes:
         - insert:
             tableName: um_user

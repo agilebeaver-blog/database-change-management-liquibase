@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 0.0.1-009
       author: agilebeaver
+      context: local
       changes:
         - sql:
             sql: |

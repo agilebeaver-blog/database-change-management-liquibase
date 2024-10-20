@@ -9,13 +9,11 @@ plugins {
     kotlin("plugin.jpa") version "1.9.25"
 }
 
-group = "com.agilebeaver.blog.database.changemanagement.liquibase"
+group = "com.agilebeaver.db.cm.liquibase"
 version = "0.0.1-SNAPSHOT"
 
 val currentJavaVersion = JavaVersion.current()
 val minimumJavaVersion = JavaVersion.VERSION_21
-
-println("Current Java version: $currentJavaVersion")
 
 tasks.withType<JavaCompile> {
     if (currentJavaVersion < minimumJavaVersion) {

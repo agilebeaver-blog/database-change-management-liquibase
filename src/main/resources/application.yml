@@ -17,6 +17,8 @@ logging:
 spring:
   application:
     name: 'agilebeaver-db-cm-liquibase'
+  banner:
+    location: classpath:banner-text.txt
   datasource:
     url: "${SPRING_DATASOURCE_URL}"
     username: "${SPRING_DATASOURCE_USERNAME}"

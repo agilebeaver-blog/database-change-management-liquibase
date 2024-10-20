@@ -26,17 +26,17 @@ data class Role(
     @Column(name = "name", nullable = false, length = 12)
     var name: String,
 
+    @Column(name = "created_by", nullable = false, length = 30)
+    var createdBy: String,
+
+    @Column(name = "modified_by", nullable = false, length = 30)
+    var modifiedBy: String,
+
     @ColumnDefault("now()")
     @Column(name = "created_at", nullable = false)
     var createdAt: LocalDateTime = LocalDateTime.now(),
 
-    @Column(name = "created_by", nullable = false, length = 30)
-    var createdBy: String,
-
     @ColumnDefault("now()")
     @Column(name = "modified_at", nullable = false)
     var modifiedAt: LocalDateTime = LocalDateTime.now(),
-
-    @Column(name = "modified_by", nullable = false, length = 30)
-    var modifiedBy: String
 )
