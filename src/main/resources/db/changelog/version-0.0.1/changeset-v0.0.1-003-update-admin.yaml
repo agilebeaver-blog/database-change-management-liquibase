@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-003
+      author: agilebeaver
+      context: local,dev,int
+      changes:
+        - update:
+            tableName: um_user
+            columns:
+              - column:
+                  name: password
+                  value: '$2a$12$9PBczWTAxNl.R303mtX/s.skautBOMmBT1fmpnaPt60TQMXo6RNVW'
+              - column:
+                  name: email
+                  value: 'thebeaveradmin@agilebeaver.com'
+              - column:
+                  name: modified_by
+                  value: 'admin'
+              - column:
+                  name: modified_at
+                  valueComputed: CURRENT_TIMESTAMP
+            where: "login = 'admin'"

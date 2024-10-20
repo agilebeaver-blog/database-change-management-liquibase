@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/agilebeaver"
+    username: "agile"
+    password: "beaver"
+  liquibase:
+    contexts: 'local'
+
+logging:
+  file:
+    name: "./log/agilebeaver-app.log"

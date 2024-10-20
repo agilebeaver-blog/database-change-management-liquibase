@@ -1,0 +1,1 @@
+rootProject.name = "agilebeaver-db-cm-liquibase"

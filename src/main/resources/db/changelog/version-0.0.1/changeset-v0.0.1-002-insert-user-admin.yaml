@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.0.1-002
+      author: agilebeaver
+      changes:
+        - insert:
+            tableName: um_user
+            columns:
+              - column:
+                  name: login
+                  value: admin
+              - column:
+                  name: password
+                  value: '$2a$12$jVYm0Ns/0zdphX8dn.QKouLq1TSE1Fo0cQs0itPUAk9WSJwtqmwRm'
+              - column:
+                  name: email
+                  value: 'admin@agilebeaver.com'
+              - column:
+                  name: created_by
+                  value: admin
+              - column:
+                  name: modified_by
+                  value: admin
