@@ -1,6 +1,6 @@
 # Repository database-change-management-liquibase
 
-This is the repository containing example code for the blog post https://blog.agilebeaver.com/database-change-management-liquibase.
+This is the repository containing example code for the blog post https://blog.agilebeaver.com/2024/10/21/database-change-managment-liquibase/.
 
 In this example we will see how we can change our database schema alongside with the code changes, both maintained in the same code repository.
 
